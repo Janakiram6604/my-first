@@ -1,15 +1,16 @@
 /* --- Global Styles & Variables --- */
 :root {
-    --primary-color: #4A90E2;   /* Elegant sky blue */
-    --primary-hover: #357ABD;   /* Slightly darker hover blue */
-    --dark-color: #2C3E50;      /* Deep slate gray */
-    --light-color: #F8F9FA;     /* Soft light gray */
-    --white-color: #E8F0FE;     /* Pale blue background */
-    --text-color: #4B5563;      /* Muted charcoal for readability */
-    --border-color: #E5E7EB;    /* Gentle neutral gray border */
-    --success-color: #22C55E;   /* Fresh green */
-    --error-color: #EF4444;     /* Refined coral red */
+    --primary-color: #1E88E5;   /* Bright royal blue */
+    --primary-hover: #1565C0;   /* Deeper hover blue */
+    --dark-color: #0D1117;      /* Deep navy black (background) */
+    --light-color: #1E1E2E;     /* Dark slate gray */
+    --white-color: #AFCBFF;     /* Pale blue highlight */
+    --text-color: #E0E0E0;      /* Light gray text for visibility */
+    --border-color: #2D3748;    /* Subtle border gray */
+    --success-color: #2ECC71;   /* Vibrant emerald green */
+    --error-color: #E74C3C;     /* Strong elegant red */
 }
+
 
 
 /* Basic Reset */
@@ -265,4 +266,5 @@ footer {
     color: var(--error-color);
 
 }
+
 
