@@ -1,15 +1,16 @@
 /* --- Global Styles & Variables --- */
 :root {
-    --primary-color: #007BFF; /* A nice blue */
-    --primary-hover: #0056b3;
-    --dark-color: #333;
-    --light-color: #f4f4f4;
-    --white-color: #fff;
-    --text-color: #555;
-    --border-color: #ddd;
-    --success-color: #28a745;
-    --error-color: #dc3545;
+    --primary-color: #4A90E2;   /* Elegant sky blue */
+    --primary-hover: #357ABD;   /* Slightly darker hover blue */
+    --dark-color: #2C3E50;      /* Deep slate gray */
+    --light-color: #F8F9FA;     /* Soft light gray */
+    --white-color: #FFFFFF;     /* Pure white */
+    --text-color: #4B5563;      /* Muted charcoal for readability */
+    --border-color: #E5E7EB;    /* Gentle neutral gray border */
+    --success-color: #22C55E;   /* Fresh green (success) */
+    --error-color: #EF4444;     /* Refined coral red (error) */
 }
+
 
 /* Basic Reset */
 * {
@@ -262,4 +263,5 @@ footer {
 
 #form-status.error {
     color: var(--error-color);
+
 }
