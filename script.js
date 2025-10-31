@@ -1,47 +1,82 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
 
-document.addEventListener("DOMContentLoaded", function() {
-    
-    const contactForm = document.getElementById("contact-form");
-    
     if (contactForm) {
-       
-        const formStatus = document.getElementById("form-status");
-
-        
-        contactForm.addEventListener("submit", function(event) {
-            
+        contactForm.addEventListener('submit', function(event) {
+            // Prevent the default form submission
             event.preventDefault();
+            
+            // Clear previous errors
+            clearErrors();
 
-            const name = document.getElementById("name").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const subject = document.getElementById("subject").value.trim();
-            const message = document.getElementById("message").value.trim();
+            // Perform validation
+            let isValid = validateForm();
 
-            if (name === "" || email === "" || subject === "" || message === "") {
-               
-                formStatus.textContent = "Please fill out all fields.";
-                formStatus.className = "error";
-                return;
+            if (isValid) {
+                // Hide the form and show the success message
+                contactForm.style.display = 'none';
+                document.getElementById('form-success').style.display = 'block';
             }
-
-            
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-               
-                formStatus.textContent = "Please enter a valid email address.";
-                formStatus.className = "error";
-                return; 
-            }
-
-            
-            formStatus.textContent = "Thank you! Your message has been sent. (This is a demo)";
-            formStatus.className = "success";
-
-           
-            contactForm.reset();
-
-            
         });
     }
 
+    function validateForm() {
+        let valid = true;
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const subject = document.getElementById('subject');
+        const message = document.getElementById('message');
+
+        // Name validation
+        if (name.value.trim() === '') {
+            showError(name, 'Name is required.');
+            valid = false;
+        }
+
+        // Email validation
+        if (email.value.trim() === '') {
+            showError(email, 'Email is required.');
+            valid = false;
+        } else if (!isValidEmail(email.value.trim())) {
+            showError(email, 'Please enter a valid email address.');
+            valid = false;
+        }
+
+        // Subject validation
+        if (subject.value.trim() === '') {
+            showError(subject, 'Subject is required.');
+            valid = false;
+        }
+
+        // Message validation
+        if (message.value.trim() === '') {
+            showError(message, 'Message is required.');
+            valid = false;
+        }
+        
+        return valid;
+    }
+
+    function showError(inputElement, message) {
+        const formGroup = inputElement.parentElement;
+        const errorElement = formGroup.querySelector('.error-message');
+        
+        inputElement.style.borderColor = '#e74c3c'; // Red border for error
+        errorElement.textContent = message;
+        errorElement.style.display = 'block';
+    }
+
+    function clearErrors() {
+        const errorMessages = document.querySelectorAll('.error-message');
+        errorMessages.forEach(msg => msg.style.display = 'none');
+        
+        const inputs = document.querySelectorAll('#contactForm input, #contactForm textarea');
+        inputs.forEach(input => input.style.borderColor = '#ddd'); // Reset border color
+    }
+    
+    function isValidEmail(email) {
+        // A simple regex for email validation
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
 });
