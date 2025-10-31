@@ -4,11 +4,11 @@
     --primary-hover: #357ABD;   /* Slightly darker hover blue */
     --dark-color: #2C3E50;      /* Deep slate gray */
     --light-color: #F8F9FA;     /* Soft light gray */
-    --white-color: #FFFFFF;     /* Pure white */
+    --white-color: #E8F0FE;     /* Pale blue background */
     --text-color: #4B5563;      /* Muted charcoal for readability */
     --border-color: #E5E7EB;    /* Gentle neutral gray border */
-    --success-color: #22C55E;   /* Fresh green (success) */
-    --error-color: #EF4444;     /* Refined coral red (error) */
+    --success-color: #22C55E;   /* Fresh green */
+    --error-color: #EF4444;     /* Refined coral red */
 }
 
 
@@ -265,3 +265,4 @@ footer {
     color: var(--error-color);
 
 }
+
