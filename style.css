@@ -1,0 +1,265 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #007BFF; /* A nice blue */
+    --primary-hover: #0056b3;
+    --dark-color: #333;
+    --light-color: #f4f4f4;
+    --white-color: #fff;
+    --text-color: #555;
+    --border-color: #ddd;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* For smooth scrolling */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+main {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+section {
+    background: var(--white-color);
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3, h4 {
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+h2 {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: var(--primary-color);
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    margin-bottom: 15px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background: var(--dark-color);
+    color: var(--white-color);
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: var(--white-color);
+    margin: 0;
+}
+
+header nav ul {
+    margin: 0;
+}
+
+header nav li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+header nav a {
+    color: var(--white-color);
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: var(--primary-color);
+}
+
+header nav a.active {
+    background-color: var(--primary-hover);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: var(--dark-color);
+    color: var(--white-color);
+    margin-top: 20px;
+}
+
+/* --- Home Page Specific --- */
+#hero {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid var(--primary-color);
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.intro {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 15px auto;
+}
+
+.quote {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 20px auto 0;
+    border-left: 4px solid var(--border-color);
+    padding-left: 15px;
+}
+
+.quote cite {
+    display: block;
+    margin-top: 5px;
+    font-style: normal;
+    font-weight: bold;
+    color: var(--dark-color);
+}
+
+/* --- Resume Page Specific --- */
+#resume-content section {
+    margin-bottom: 30px;
+}
+
+.education-item, .job, .project {
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 3px solid var(--border-color);
+}
+
+.skills-list {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills-list li {
+    background: var(--light-color);
+    color: var(--dark-color);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    border: 1px solid var(--border-color);
+}
+
+.project a {
+    font-weight: bold;
+}
+
+/* --- Contact Page Specific --- */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white-color);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--primary-hover);
+}
+
+#form-status {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+#form-status.success {
+    color: var(--success-color);
+}
+
+#form-status.error {
+    color: var(--error-color);
+}
